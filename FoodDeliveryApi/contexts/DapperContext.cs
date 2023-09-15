@@ -8,7 +8,13 @@ namespace FoodDeliveryApi.contexts
     {
         private readonly IConfiguration _configuration;
         private readonly string _connectionString;
-        public DapperContext(IConfiguration configuration)
+
+		public DapperContext()
+		{
+            _connectionString = "server=DESKTOP-DGU940A\\SQLEXPRESS; database=FoodDelivery; Integrated Security=true; Encrypt=false;";
+		}
+
+		public DapperContext(IConfiguration configuration)
         {
             _configuration = configuration;
             _connectionString = _configuration.GetConnectionString("FoodDeliveryConnection");
